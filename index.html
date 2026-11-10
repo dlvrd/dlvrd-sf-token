@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://dlvrd.my.salesforce.com; form-action 'none'; base-uri 'none'">
+<title>DLVRD Salesforce token</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>DLVRD Salesforce token</h1>
+  <p class="sub">Emergency use only. Signs you in to Salesforce and shows a short-lived access token to paste into Claude's secure credential form. Nothing is stored or sent anywhere except Salesforce.</p>
+
+  <section id="start" hidden>
+    <button id="go" type="button">Sign in to Salesforce</button>
+    <p class="note">You will sign in with your own login and MFA. The token lasts as long as the connected app's session timeout.</p>
+  </section>
+
+  <section id="busy" hidden><p>Exchanging the sign-in code…</p></section>
+
+  <section id="done" hidden>
+    <label for="token">Access token</label>
+    <textarea id="token" readonly rows="4" spellcheck="false" autocomplete="off"></textarea>
+    <div class="row">
+      <button id="copy" type="button">Copy token</button>
+      <button id="revoke" type="button" class="secondary">Revoke now</button>
+    </div>
+    <p id="meta" class="note"></p>
+    <p class="note">Paste it only into the secure form Claude opens — never into a chat. When the job is done, tap <b>Revoke now</b>.</p>
+  </section>
+
+  <section id="error" hidden><p id="errmsg" class="err"></p><button id="retry" type="button">Start again</button></section>
+</main>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
