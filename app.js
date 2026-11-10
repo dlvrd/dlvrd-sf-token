@@ -82,7 +82,7 @@
         method: 'POST', body: new URLSearchParams({ token: t }), credentials: 'omit', cache: 'no-store'
       });
       $('token').value = '';
-      $('meta').textContent = r.ok ? 'Revoked. The token no longer works.' : 'Revoke returned ' + r.status + ' — let the session time out or end it in Setup → Session Management.';
+      $('meta').textContent = r.ok ? 'Revoked. The token no longer works. Now sign out of Salesforce in this browser, or close this private tab: Revoke does not end that sign-in.' : 'Revoke returned ' + r.status + ' — let the session time out or end it in Setup → Session Management.';
     } catch (e) {
       $('meta').textContent = 'Could not reach Salesforce to revoke. End the session in Setup → Session Management.';
     }

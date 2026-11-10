@@ -15,7 +15,8 @@
 
   <section id="start" hidden>
     <button id="go" type="button">Sign in to Salesforce</button>
-    <p class="note">You will sign in with your own login and MFA. The token lasts as long as the connected app's session timeout.</p>
+    <p class="note">You will sign in as the admin user, with MFA. The token lasts 30 minutes at most.</p>
+    <p class="note"><b>Open this page in a private tab.</b> Signing in also signs this browser in to Salesforce as admin. Closing a private tab ends that sign-in.</p>
   </section>
 
   <section id="busy" hidden><p>Exchanging the sign-in code…</p></section>
@@ -28,7 +29,7 @@
       <button id="revoke" type="button" class="secondary">Revoke now</button>
     </div>
     <p id="meta" class="note"></p>
-    <p class="note">Paste it only into the secure form Claude opens — never into a chat. When the job is done, tap <b>Revoke now</b>.</p>
+    <p class="note">Paste it only into the secure form Claude opens — never into a chat. When the job is done, tap <b>Revoke now</b>, <b>then sign out of Salesforce in this browser</b> or close this private tab. Revoke ends the token only.</p>
   </section>
 
   <section id="error" hidden><p id="errmsg" class="err"></p><button id="retry" type="button">Start again</button></section>
